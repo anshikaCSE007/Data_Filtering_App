@@ -1,5 +1,5 @@
 import "./HomePage.css";
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 import Dropdown from "./Dropdown/Dropdown"
 import { Button } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,10 +18,11 @@ function HomePage() {
 	const numberOfResults = [10,20,50,100]
 	const[gen,setGen] = useState(null)
 	const[nat,setNat] = useState(null)
-	const[res,setRes] = useState(10)
+	const[res,setRes] = useState(null)
 	const[page,setPage] = useState(1);
 	const [data, setData] = useState("");
 	const [OriginalData, setOriginalData] = useState([]);
+
 
 	const fetchdata = () => {
 		console.log(gen, res, nat);
@@ -64,14 +65,16 @@ function HomePage() {
 			},
 		  });
 
-		  const handlePrevPageNumber = (page) => {
+		  const handlePrevPageNumber = () => {
+			  console.log(page)
 			if (page !== 1) {
 			  setPage(page-1);
 			  callapi();
 			}
 		  };
 
-		  const handleNextPageNumber = (page) => {
+		  const handleNextPageNumber = () => {
+			  console.log(page)
 			setPage(page + 1);
 			callapi();
 		  };
@@ -101,7 +104,7 @@ function HomePage() {
 			<Button className="load__button" onClick={callapi}>Click To Filter</Button>
 			<button onClick={() => { handleNextPageNumber()}}>NEXT Page</button>
 			<button onClick={() => { handlePrevPageNumber()}}>PREVIOUS Page</button>
-			{/* <strong>page: {page}</strong> */}
+			page:{page}
 			</div>
 			
 			<div className="table">
@@ -120,24 +123,6 @@ function HomePage() {
           </TableRow>
         </TableHead>
         <TableBody>
-		{/* {OriginalData.map((details, idx) => (
-          <Post
-            key={idx}
-            username={
-              details.name.title +
-              " " +
-              details.name.first +
-              " " +
-              details.name.last
-            }
-            location={details.location.country}
-            imagethumb={details.picture.thumbnail}
-            gender={details.gender}
-            phone={details.phone}
-            email={details.email}
-            imagelarge={details.picture.large}
-          />
-        ))} */}
           {OriginalData.map((row) => (
             <TableRow key={row.idx}>
               <TableCell component="th" scope="row">
