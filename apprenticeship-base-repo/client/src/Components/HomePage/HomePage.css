@@ -1,0 +1,10 @@
+.app__dropdown{
+  width: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+}
