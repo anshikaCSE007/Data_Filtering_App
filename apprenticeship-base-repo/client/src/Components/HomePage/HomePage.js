@@ -1,4 +1,5 @@
 import "./HomePage.css";
+import Image from "./Image"
 import React,{useState,useEffect} from "react"
 import Dropdown from "./Dropdown/Dropdown"
 import { Button } from "@material-ui/core";
@@ -22,7 +23,6 @@ function HomePage() {
 	const[page,setPage] = useState(1);
 	const [data, setData] = useState("");
 	const [OriginalData, setOriginalData] = useState([]);
-
 
 	const fetchdata = () => {
 		console.log(gen, res, nat);
@@ -126,7 +126,7 @@ function HomePage() {
           {OriginalData.map((row) => (
             <TableRow key={row.idx}>
               <TableCell component="th" scope="row">
-                <img  src={row.picture.thumbnail}/>
+			  <Image thumbnail={row.picture.thumbnail} large={row.picture.large}/>
               </TableCell>
               <TableCell align="right">{row.name.title +" " + row.name.first +" " +row.name.last}</TableCell>
               <TableCell align="right">{row.gender}</TableCell>
