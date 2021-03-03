@@ -10,6 +10,8 @@
     2. Click the Filter Data Option, All the filtered data will be seen on the right tempelate.
     3.Click on Next Page or Previous Page to change Pages.
     4. The thumbnails, when clicked will pop into large images.
+    5.snapshots are provided to give an overview of the application.
+   
 
 #by Anshika Singh
 
