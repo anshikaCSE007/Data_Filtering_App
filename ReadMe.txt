@@ -1,4 +1,4 @@
-# Better Place Assignment : 
+
     ##Installation:
     1. Clone this repository using "git clone https://github.com/AnshikaCodeChef/Data_Filtering_App" command.
     2. Move to the path "/apprenticeship-base-repo/client"
